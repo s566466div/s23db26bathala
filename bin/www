@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('f23wb26bathala:server');
+var debug = require('debug')('s23db26bathala:server');
 var http = require('http');
 
 /**
