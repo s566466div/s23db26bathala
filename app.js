@@ -50,21 +50,21 @@ async function recreateDB(){
  // Delete everything
  await fruits.deleteMany();
  let instance1 = new
-fruits({fruits_name:"Strawberry", color:'Red',cost:1.00});
+fruits({name:"Strawberry", color:"Red",cost:1.00});
  instance1.save().then(doc=>{
  console.log("First object saved")}
  ).catch(err=>{
  console.error(err)
  });
  let instance2 = new
-fruits({fruits_name:"Pineapple", color:'Yellow',cost:0.50});
+fruits({name:"Pineapple", color:"Yellow",cost:0.50});
  instance2.save().then(doc=>{
  console.log("Second object saved")}
  ).catch(err=>{
  console.error(err)
  });
  let instance3 = new
-fruits({fruits_name:"Orange", color:'Orange',cost:0.75});
+fruits({name:"Orange", color:"Orange",cost:0.75});
  instance3.save().then(doc=>{
  console.log("Third object saved")}
  ).catch(err=>{

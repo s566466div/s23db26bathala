@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   
-  - let results = [ { name: 'strawberry', color: 'Red', price: 1.00 }, { name: 'pineapple', color: 'Yellow', price: 0.50 }, { name: 'Orange', color: 'Orange', price: 0.75 } ];
+  - let results = [ { name: 'strawberry', color: 'Red', cost: 1.00 }, { name: 'pineapple', color: 'Yellow', cost: 0.50 }, { name: 'Orange', color: 'Orange', cost: 0.75 } ];
 
   html
     head
@@ -13,7 +13,7 @@ block content
         div.container-fluid
         div.row
           each item in results
-            div(class="col-sm-2" onclick =`buy(${index})`) <br> #{item.name}, <br> #{item.color}, <br> #{item.price} <br>
+            div(class="col-sm-2" onclick =`buy(${index})`) <br> #{item.name}, <br> #{item.color}, <br> #{item.cost} <br>
             script.
               function buy(a)
               {
