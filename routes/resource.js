@@ -17,4 +17,5 @@ router.put('/fruits/:id', fruits_controller.fruits_update_put);
 router.get('/fruits/:id', fruits_controller.fruits_detail);
 // GET request for list of all fruits items.
 router.get('/fruits', fruits_controller.fruits_list);
+
 module.exports = router;
