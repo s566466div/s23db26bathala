@@ -11,3 +11,11 @@ a {
   width: 120px;
   }
   
+.fruitsForm {
+  background-color: rgb(157, 127, 255);
+  width: 300px;
+}
+h1{
+  background-color: rgb(157, 127, 255);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif green;
+}
