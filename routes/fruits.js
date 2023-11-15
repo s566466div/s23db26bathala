@@ -6,4 +6,6 @@ var router = express.Router();
 router.get('/fruits', fruits_controllers.fruits_view_all_Page );
 /* GET detail fruits page */
 router.get('/detail', fruits_controllers.fruits_view_one_Page);
+/* GET create fruits page */
+router.get('/create', fruits_controllers.fruits_create_Page);
 module.exports = router;
