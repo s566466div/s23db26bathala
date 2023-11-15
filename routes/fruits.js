@@ -8,4 +8,6 @@ router.get('/fruits', fruits_controllers.fruits_view_all_Page );
 router.get('/detail', fruits_controllers.fruits_view_one_Page);
 /* GET create fruits page */
 router.get('/create', fruits_controllers.fruits_create_Page);
+/* GET create update page */
+router.get('/update', fruits_controllers.fruits_update_Page);
 module.exports = router;

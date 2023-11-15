@@ -3,12 +3,12 @@ var fruits = require('../models/fruits');
 // List of all fruitss
 exports.fruits_list = async function(req, res) {
     try{
-    thefruitss = await fruits.find();
-    res.send(thefruitss);
+        thefruitss = await fruits.find();
+        res.send(thefruitss);
     }
     catch(err){
-    res.status(500);
-    res.send(`{"error": ${err}}`);
+        res.status(500);
+        res.send(`{"error": ${err}}`);
     }
    };
 // for a specific fruits.
@@ -75,6 +75,7 @@ ${JSON.stringify(req.body)}`)
 failed`);
  }
 };
+
 exports.fruits_view_all_Page = async function(req, res) {
     try{
     thefruit = await fruits.find();
@@ -111,4 +112,19 @@ exports.fruits_create_Page = function(req, res) {
     res.send(`{'error': '${err}'}`);
     }
     };
+    
+    // Handle building the view for updating a fruits.
+// query provides the id
+exports.fruits_update_Page = async function(req, res) {
+    console.log("update view for item "+req.query.id)
+    try{
+        let result = await fruits.findById(req.query.id)
+        res.render('fruitsupdate', { title: 'fruits Update', toShow: result });
+    }
+    catch(err){
+        res.status(500)
+        res.send(`{'error': '${err}'}`);
+    }
+    };
+   
     
