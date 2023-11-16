@@ -1,21 +1,23 @@
 extends layout
-
 block content
   h1= title
-  - let fruitid = toShow._id
-  - let fruit_name = toShow.name
-  - let fruitcolor = toShow.color
-  - let fruitcost = toShow.cost
-  div
-    div.row
-      div(class='fruitsAttr mr-3') Fruit ID is:
-      div #{fruitid}
-    div.row
-      div(class='fruitsAttr mr-3') Fruit Name is:
-      div #{fruit_name}
-    div.row
-      div(class='fruitsAttr mr-3') Fruit color is:
-      div #{fruitcolor}
-    div.row
-      div(class='fruitsAttr mr-3') Fruit Cost is:
-      div #{fruitcost}
+  if (toShow == null)
+    h2 No instance to detail
+  else
+    - let fruitid = toShow._id
+    - let fruit_name = toShow.name
+    - let fruitcolor = toShow.color
+    - let fruitcost = toShow.cost
+    div
+      div.row
+        div(class='fruitsAttr mr-3') Fruit ID is:
+          div #{fruitid}
+      div.row
+        div(class='fruitsAttr mr-3') Fruit Name is:
+          div #{fruit_name}
+      div.row
+        div(class='fruitsAttr mr-3') Fruit color is:
+          div #{fruitcolor}
+      div.row
+        div(class='fruitsAttr mr-3') Fruit Cost is:
+          div #{fruitcost}
