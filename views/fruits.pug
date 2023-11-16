@@ -3,19 +3,16 @@ extends layout
 block content
   h1= title
   
-  - let results = [ { name: 'strawberry', color: 'Red', cost: 1 }, { name: 'pineapple', color: 'Yellow', cost: 2 }, { name: 'Orange', color: 'Orange', cost: 3 } ];
-
-  html
-    head
-      title Fruits
-    body
-      h1 Fruits
+  - let fruits = [ { name: 'strawberry', color: 'Red', cost: 1 }, { name: 'pineapple', color: 'Yellow', cost: 2 }, { name: 'Orange', color: 'Orange', cost: 3 } ];
+  
         div.container-fluid
-        div.row
-          each item in results
-            div(class="col-sm-2" onclick =`buy(${index})`) <br> #{item.name}, <br> #{item.color}, <br> #{item.cost} <br>
-            script.
-              function buy(a)
-              {
-                  alert(`You purchased Item ${a+1}`)
-              }
+          div.row
+            each item in results
+              - let destination = `dispatch(\"/fruits/update?id=${item._id}\")`
+              div(class="col-sm-2" onclick =`buy(${index})`) #{item.name},  #{item.color},  #{item.cost}
+                button.btn( class="btn-primary ml-1", onclick= destination) Update 
+          script.
+            function dispatch(path){
+              window.location.href=path
+            }
+

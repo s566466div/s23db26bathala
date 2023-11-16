@@ -26,10 +26,6 @@ exports.fruits_detail = async function(req, res) {
 exports.fruits_create_post = async function(req, res) {
     console.log(req.body)
     let document = new fruits();
-    // We are looking for a body, since POST does not have query parameters.
-    // Even though bodies can be in many different formats, we will be picky
-    // and require that it be a json object
-    // {"fruits_type":"goat", "cost":12, "size":"large"}
     document.name = req.body.name;
     document.color = req.body.color;
     document.cost = req.body.cost;
