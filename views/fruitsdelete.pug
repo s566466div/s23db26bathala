@@ -7,8 +7,8 @@ block content
   else
     - let fruitsid = toShow._id
     - let fruits_type = toShow.name
-    - let fruitscost = toShow.color
-    - let fruitssize = toShow.cost
+    - let fruitscolor = toShow.color
+    - let fruitscost = toShow.cost
     - let actionid = "/resource/fruits/" + fruitsid
 
     script.
@@ -23,7 +23,7 @@ block content
         div #{fruits_type}
       div.row
         div(class='fruitsAttr mr-3') fruits Size is:
-        div #{fruitssize}
+        div #{fruitscolor}
       div.row
         div(class='fruitsAttr mr-3') fruits Cost is:
         div #{fruitscost}
