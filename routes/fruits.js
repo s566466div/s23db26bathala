@@ -10,7 +10,7 @@ router.get('/detail', fruits_controllers.fruits_view_one_Page);
 router.get('/create', fruits_controllers.fruits_create_Page);
 /* GET create update page */
 router.get('/update', fruits_controllers.fruits_update_Page);
-/* GET delete costume page */
+/* GET delete Fruits page */
 router.get('/delete', fruits_controllers.fruits_delete_Page);
 
 module.exports = router;
