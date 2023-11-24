@@ -4,15 +4,20 @@ block content
   h1= title
   
   - let fruits = [ { name: 'strawberry', color: 'Red', cost: 1 }, { name: 'pineapple', color: 'Yellow', cost: 2 }, { name: 'Orange', color: 'Orange', cost: 3 } ];
-  
-        div.container-fluid
-          div.row
-            each item in results
-              - let destination = `dispatch(\"/fruits/update?id=${item._id}\")`
-              div(class="col-sm-2" onclick =`buy(${index})`) #{item.name},  #{item.color},  #{item.cost}
-                button.btn( class="btn-primary ml-1", onclick= destination) Update 
-          script.
-            function dispatch(path){
-              window.location.href=path
-            }
 
+  - let create = `dispatch("/fruits/create")`
+  button.btn(class="btn-info", onclick=create) Add new fruit
+  div.container-fluid
+    div.row
+      each item in results
+        - let destination = `dispatch("/fruits/update?id=${item._id}")`
+        - let detail = `dispatch(\"/fruits/detail/?id=${item._id}")`
+        - let deletefruits = `dispatch(\"/fruits/delete/?id=${item._id}")`
+        div(class="col-sm-2" onclick=`buy(${index})`) #{item.name}, #{item.color}, #{item.cost}
+          button.btn(class="btn-primary ml-1", onclick=destination) Update
+          button.btn( class="btn-success", onclick= detail) Details
+          button.btn( class="btn-dark", onclick= deletefruits) Delete
+  script.
+    function dispatch(path){
+      window.location.href = path;
+    }
